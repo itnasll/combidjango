@@ -1,0 +1,37 @@
+{% extends 'combi/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<form action="{% url 'buscar' %}" method="GET">
+    <input type="search" placeholder="Search.." name="q">
+    <button type="submit"><i class="fa fa-search"></i></button>{% if busca != "" %} <h2>"{{busca}}"</h2>{%endif%}
+</form>
+<table>
+    <tbody>
+{% if resultados != "" %}
+<tr>
+    <th>nombre</th>
+    <th>teléfono</th>
+    <th>sube en</th>
+    <th>baja en</th>
+    <th>asiento</th>
+    <th>pagó</th>
+    <th></th>
+    <th></th>
+</tr>
+{% endif %}
+{% for i in resultados %}
+
+<tr>
+        <td>{{i.nombre}}</td>
+		<td>{{i.telefono}}</td>
+		<td>{{i.subeEn}}</td>
+		<td>{{i.bajaEn}}</td>
+		<td>{{i.asiento}}</td>
+		<td>{{i.pago}}</td>
+		<td></td>
+		<td></td>
+</tr>
+{% endfor %}
+{% endblock %} 

@@ -1,0 +1,10 @@
+{% extends 'combi/base.html' %}
+{% load static %}
+{% block content %}
+    <h2>Reservar Viaje</h2>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" name="submit" value="reservar">
+            <!-- <button type="submit" class="save btn btn-default">Save</button> -->
+        </form>
+{% endblock %} 

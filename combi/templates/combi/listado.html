@@ -1,0 +1,32 @@
+{% extends 'combi/base.html' %}
+{% load static %}
+{% block content %}
+<h1>Listado de reservas</h1>
+<table>
+    <tbody><tr>
+		<th>nombre</th>
+		<th>teléfono</th>
+		<th>sube en</th>
+		<th>baja en</th>
+		<th>asiento</th>
+		<th>pagó</th>
+		<th></th>
+		<th></th>
+	</tr>
+    
+    {% for reserva in reservas %}
+    <tr>
+        <td>{{reserva.nombre}}</td>
+		<td>{{reserva.telefono}}</td>
+		<td>{{reserva.subeEn}}</td>
+		<td>{{reserva.bajaEn}}</td>
+		<td>{{reserva.asiento}}</td>
+		<td>{{reserva.pago}}</td>
+		<td></td>
+		<td></td>
+    </tr>
+    {% endfor %}    
+
+
+
+{% endblock %} 
